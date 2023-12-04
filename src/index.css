@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Myriad Variable Concept";
+  src: local("Myriad Variable Concept"),
+    url("/fonts/Myriad Variable Concept.otf") format("opentype");
+  /* You can also provide additional font formats like woff, woff2, ttf for better browser compatibility */
+}
+body {
+  font-family: "Myriad Variable Concept", sans-serif;
+  color: #626e7b;
+}
+
+/* In your styles or a separate CSS file */
+.bg-tilted {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: #c1272d; /* Replace with your desired background color */
+  transform: skewY(-1deg);
+  transform-origin: 100% 0;
+  z-index: -1;
+}
+
+/* Checkboxes */
+.check-box:checked ~ .check-1 {
+  @apply text-opacity-100;
+  animation: check-anime 0.1s 1;
+}
+
+@keyframes check-anime {
+  0%,
+  100% {
+    @apply transform scale-100;
+  }
+  50% {
+    @apply transform scale-150 text-opacity-0;
+  }
+}
